@@ -1,0 +1,793 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+  font-size: 1.1em;
+}
+
+.contenidor {
+  width: 100vw;
+  height: 100vh;
+  background-color: #242424;
+  color: #fff;
+
+}
+
+/*********************************** N A V B A R ******************************* */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5em;
+  background-color: #222222;
+ 
+}
+.logo {
+  margin-top: -7px;
+  text-shadow:  0 0 15px #fff,
+  0 0 30px #fff,
+  0 0 60px #fff;
+}
+
+.blau-web {
+  color: #8ad0e7;
+}
+
+.menu {
+  display: flex;
+  width: 100vh;
+  justify-content: space-around;
+  
+
+}
+.menu li {
+  list-style: none;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  padding: 6px 12px;
+  transition: 0.36s;
+}
+
+@media (hover:hover) {
+  .menu .item2 a:hover {
+    color: #fff;
+    text-shadow:  0 0 10px #fff,
+                  0 0 20px #fff,
+                  0 0 40px #fff,
+                  0 0 80px #fff,
+                  0 0 120px #fff;
+
+    transition: 0.5s;
+    font-weight: 600;
+    letter-spacing: 6px;
+
+  }  
+}
+
+@media screen and (min-width: 600px) {
+  .main {
+    margin: 0 auto;
+    width : 80vw;
+    height: 80vh;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+  }
+  h1 {
+    font-size: 3.5em;
+    text-shadow: 6px 6px 12px rgb(0, 0, 0, 0.6);
+    margin-bottom: 12px;
+  }
+  .main img {
+    display: flex;
+    width: 100%;
+    border: 7px solid #8ad0e7;
+    border-radius: 50%;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .main {
+    margin: 0 auto;
+    width : 85vw;
+    height: 100%;
+
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .foto-movil{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    height: max-content;
+    align-items: center;
+    position: relative;
+
+  }
+  h1 {
+    font-size: 2.5em;
+  }
+
+  .main img {
+    display: flex;
+    width: 70%;
+    border: 7px solid #8ad0e7;
+    border-radius: 50%;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  }
+
+  .oculta-movil {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+
+}
+
+
+/** Botó Descargar CV i potser d'altres? *********************************/
+.btn{
+  position: relative;
+  width: 210px;
+  height: 50px;
+  margin-top: 28px;
+}
+
+.btn a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  color: #fff;
+  z-index: 1;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: 0.5s;
+  backdrop-filter: blur(15px);
+
+}
+
+.btn:hover a {
+  letter-spacing: 3px;
+}
+
+.btn a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to left, rgba(255,255,255,0.15),transparent);
+  transform: skewX(45deg) translateX(0);
+  transition: 0.5s;
+}
+
+.btn:hover a::before {
+  transform: skewX(45deg) translateX(200%);
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -5px;
+  width: 40px;
+  height: 10px;
+  background-color: #8ad0e7;
+  border-radius: 30px;
+  transition: 0.5s;
+}
+
+.btn:hover::before {
+  bottom: 0;
+  height: 30%;
+  width: 80%;
+  border-radius: 30px;
+  transition-delay: 0.35s;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -5px;
+  width: 40px;
+  height: 10px;
+  background-color: #8ad0e7;
+  border-radius: 30px;
+  transition: 0.5s;
+}
+
+.btn:hover::after {
+  top: 0;
+  height: 30%;
+  width: 80%;
+  border-radius: 30px;
+  transition-delay: 0.4s;
+}
+
+.btn::before,
+.btn::after {
+  background: #35c1f0;
+  box-shadow: 0 0  7px #8ad0e7,
+              0 0 15px #8ad0e7,
+              0 0 30px #8ad0e7,
+              0 0 60px #8ad0e7;
+
+}
+/** Botó ostres... FRENAT UNA MICA *********************************/
+
+.informacio {
+  padding-right: 2em;
+
+}
+
+/* ****************************** S O B R E  M I ************************ */
+
+
+@media screen and (max-width: 600px) {
+  .sobre-info {
+    grid-column: 1/10;
+    padding: 3em;
+  }
+  .sobre {
+    display: flex;
+    align-items: center;
+    width: 90vw;
+}
+
+}
+
+@media screen and (min-width: 600px){
+  .sobre-info {
+    grid-column: 5/10;
+    padding: 3em;
+  }
+  .sobre {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    width: 100vw;
+    align-items: center;
+    min-height: 100vh;
+  
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .sobre-info {
+    grid-column: 5/10;
+    padding: 4em;
+  }
+
+  .sobre {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    width: 100vw;
+    align-items: center;
+    height: auto;
+
+  }
+  .portafoli {
+    width: 100vw;
+    height: 100%;
+
+  
+    background-color: #242424;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  
+  }
+}
+
+.sobre p {
+  margin-bottom: 10px;
+}
+
+.sobre img {
+  width: 100%;
+  grid-column: 1/5;
+  border-bottom-right-radius: 50%;
+}
+
+.sobre-info h2 {
+  font-size: 2.5em;
+  color: #242424;;
+}
+
+.sobre p {
+  margin-bottom: 1em;
+}
+
+.divider-sobre {
+  height: 4px;
+  width: 206px;
+  background-color: #b8e236;
+  margin-top: 10px;
+  margin-bottom: 2em;
+
+}
+
+/* *---------------- sobre mi ----------------------------------*/
+
+/*todo Unificar dividers */
+
+
+
+
+
+/* ? ******************  P O R T A F O L I *********************** */
+
+.portafoli {
+  width: 100vw;
+  height: 100%;
+  min-height: 100vh;
+
+  background-color: #242424;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+}
+
+.iconaApagada {
+  color: rgba(3, 3, 3, 0.65);
+  text-shadow: none;
+}
+
+.portafoli-headings {
+  width: 100vw;
+  padding: 1.3em;
+  color: #fff;
+
+}
+
+.divider {
+  height: 4px;
+  width: 203px;
+  background-color: #b8e236;
+  margin-top: 10px;
+  margin-bottom: 2em;
+  animation: difcolors 5s linear infinite;
+}
+
+.portafoli-headings h2 {
+  font-size: 2.5em;
+}
+
+section {
+  position: relative;
+}
+
+section::before{
+  content: '';
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#8ad0e7, #c92368);
+  clip-path: circle(36% at right 70%);
+
+}
+
+section::after {
+  content: '';
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#8ad0e7, #c92368);
+  clip-path: circle(29% at 10% 80%);
+
+}
+
+.cards-contenidor {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 6px 0;
+
+}
+
+.cards-contenidor .card {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  background-color: rgba(255, 255, 255, 0.05);
+  margin: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.cards-contenidor .card .content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0.63;
+  transition: 0.5s;
+}
+
+.cards-contenidor .card:hover .content {
+  opacity: 1;
+  transform: translateY(-20px);
+}
+
+.cards-contenidor .card .content .imgBx {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 10px solid rgba(0, 0, 0, 0.25)
+}
+
+.cards-contenidor .card .content .imgBx img {
+  position: absolute;
+  top: 0;
+  left: -9vh;
+  width: 200%;
+  object-fit: cover;
+}
+
+.cards-contenidor .card .content .contentBx h3 {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  margin: 20px 0 10px;
+  line-height: 1.1em;
+}
+
+.cards-contenidor .card .content .contentBx h3 span {
+  font-size: 12px;
+  color: white;
+  font-weight: 300;
+  text-transform: initial;
+}
+
+.cards-contenidor .card .sci {
+  position: absolute;
+  bottom: 50px;
+  display: flex;
+}
+.cards-contenidor .card .sci li {
+  list-style: none;
+  margin: -5px 10px;
+  transform: translateY(40px);
+  transition: 0.5s;
+  opacity: 0;
+  transition-delay: calc(0.1s * var(--i));
+
+}
+
+.cards-contenidor .card:hover .sci li {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+.cards-contenidor .card .sci li a {
+  color: white;
+  font-size: 28px;
+  transition: 0.6s;
+}
+
+@media (max-width: 600px) {
+  .cards-contenidor .card .sci li a {
+    font-size: 36px;
+    padding: 0.3em;
+  }
+
+}
+
+.cards-contenidor .card .sci li:hover a {
+
+  text-shadow:  0 0 10px #fff,
+                0 0 20px #fff,
+                0 0 40px #fff,
+                0 0 80px #fff,
+                0 0 120px #fff;
+}
+
+/* Contingut de en què està programat */
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vh;
+  height: 120px;
+  background-color: #8ad0e7 ;
+}
+
+.footer h2 {
+  font-size: 2em;
+}
+
+.footer h5 {
+  font-size: 1.2em;
+}
+
+/* ******************** C O N T A C T E *********************** */
+
+.contenidor-general-contacte {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  width: 100%;
+  background: #242424;
+  overflow: hidden;
+
+}
+
+.contenidor-contacte {
+
+  z-index: 100;
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  padding: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 45px rgba(0,0,0,0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  overflow: hidden;
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+
+}
+
+.contenidor-contacte::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -40%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+  transform: skewX(-15deg);
+
+}
+
+.contenidor-contacte h2 {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.contenidor-contacte .contacteFiles {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+}
+
+.contenidor-contacte .contacteColumnes {
+  position: relative;
+  width: 100%;
+  padding: 0 10px;
+  margin: 30px 0 20px;
+
+}
+
+.contenidor-contacte .contacteFiles .contacteColumnes .inputBox {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  color: #fff;
+}
+
+.contenidor-contacte .contacteFiles .contacteColumnes .inputBox input,
+.contenidor-contacte .contacteFiles .contacteColumnes .inputBox textarea {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  padding: 0 10px;
+  z-index: 1;
+  color: #242424;
+
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1px;
+}
+
+.contenidor-contacte .contacteFiles .contacteColumnes .inputBox .text {
+  position: absolute;
+  top: 0;
+  left: 5px;
+  line-height: 40px;
+  font-size: 18px;
+  padding: 0, 10px;
+  display: block;
+  transition: 0.5s;
+  pointer-events: none;
+  color: #fff;
+
+}
+
+.contenidor-contacte .contacteFiles .contacteColumnes .inputBox input:focus + .text,
+.contenidor-contacte .contacteFiles .contacteColumnes .inputBox input:valid + .text,
+.contenidor-contacte .contacteFiles .contacteColumnes .inputBox textarea:focus + .text,
+.contenidor-contacte .contacteFiles .contacteColumnes .inputBox textarea:valid + .text {
+  top: -35px;
+  left: 0px;
+
+}
+
+.contenidor-contacte .contacteFiles .contacteColumnes .inputBox .line {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  transition: 0.5s;
+  border-radius: 2px;
+  pointer-events: none;
+
+}
+
+.contenidor-contacte .contacteFiles .contacteColumnes .inputBox input:focus ~ .line,
+.contenidor-contacte .contacteFiles .contacteColumnes .inputBox input:valid ~ .line {
+
+height: 100%;
+}
+
+.contenidor-contacte .contacteFiles .contacteColumnes .inputBox.textarea {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  padding: 10px 0;
+
+}
+
+
+.contenidor-contacte .contacteFiles .contacteColumnes .inputBox textarea:focus ~ .line,
+.contenidor-contacte .contacteFiles .contacteColumnes .inputBox textarea:valid ~ .line {
+
+height: 100%;
+}
+
+
+.contenidor-general-contacte::before {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: linear-gradient(#c08ca2, #c92368);
+  border-radius: 50%;
+  transform: translate(-480px,-70px);
+  overflow: hidden;
+
+  z-index: 1;
+
+}
+
+.contenidor-general-contacte::after {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(#b4dce9, #8ad0e7);
+  border-radius: 50%;
+  transform: translate(550px,130px);
+  overflow: hidden;
+
+  z-index: 1;
+}
+
+
+.contenidor-contacte .contacteFiles .contacteColumnes input[type="submit"] {
+  border: none;
+  padding: 10px 40px;
+  cursor: pointer;
+  outline: none;
+  background: #fff;
+  color: #242424;
+  
+  font-size: 18px;
+  border-radius: 30px;
+  transition: 0.5s;
+}
+
+.contenidor-contacte .contacteFiles .contacteColumnes input[type="submit"]:hover {
+  box-shadow:  0 0 10px #fff,
+                0 0 20px #fff,
+                0 0 40px #fff,
+                0 0 80px #fff,
+                0 0 120px #fff;
+  color: #b4dce9;
+
+  
+}
+
+@media (max-width: 768px) {
+  .contenidor-general-contacte::before {
+    transform: translate(40px,190px);
+    width: 250px;
+    height: 250px;
+    position:absolute
+  }
+  .contenidor-general-contacte::after {
+    transform: translate(-150px,-100px);
+    width: 300px;
+    height: 300px;
+  }
+}
+
+/* *-------------------------contacte--------------------------- */
+
+
+
+
+
+/*? Per si de cas fa falta **********************************/
+@keyframes difcolors {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+
+
+
+/*? Per si de cas fa falta ---------------------------------*/
